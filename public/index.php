@@ -9,12 +9,12 @@ echo <<<HTML
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" type="text/css" href="./styles/style.css">
-      <title>NOM_EQUIPE | Nuit de l'Info Besançon</title>
+      <title>BigEight | Nuit de l'Info Besançon</title>
   </head>
 
   <body >
     <header>
-      <h1>Bienvenue sur la page de l'équipe <b>NOM_EQUIPE</b></h1>
+      <h1>Bienvenue sur la page de l'équipe <b>BigEight</b></h1>
       <p>Page par défaut générée par l'OFNI pour la Nuit de l'Info, version php</p>
       <p>Si cette page reste vide, c'est probablement que l'équipe héberge son projet ailleurs !</p>
     </header>
