@@ -92,8 +92,8 @@ video {
                             Code HTML
 ****************************************************************/
 html, body {
-  padding: 0 8%;
   height: 100%; /* A virer plus tard si problématique ailleurs*/
+  overflow-x: hidden;
 }
 
 body > header {
@@ -123,21 +123,41 @@ body > header li {
 }
 
 body > footer {
-  padding-top: 2vh;
-  padding-bottom: 2vh;
   position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  background-color: #3498db;
+  background-color: #60D6F0;
+  opacity: 80%;
 }
 
 body > footer img {
   height: 8vh;
-  background-color: white;
   padding: 10px;
   border-radius: 3px;
 }
 
+#imageHome {
+  position: absolute; /* postulat de départ */
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  
+}
+
+#ligneAccueil {
+  flex-wrap: none;
+  width : max-content;
+}
+
+#colAccueil {
+  width : max-content;
+  max-width: 50%;
+  overflow: hidden;
+}
+
+#textAccueil {
+  padding-top: 10%;
+
+}
