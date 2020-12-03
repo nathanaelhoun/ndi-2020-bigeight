@@ -5,7 +5,7 @@ import { queryPromise } from "../database/database.js";
 dotenv.config();
 const User = {};
 
-User.signup = function (req, res, next) {
+User.signup = function (req, res) {
   if (!req.body) {
     res.status(400).json({ error: "No request body" });
     return;
@@ -42,7 +42,7 @@ User.signup = function (req, res, next) {
 
   queryPromise(sql)
     .then((sqlres) => {
-      console.table(sqlres);
+      //console.table(sqlres);
       if (sqlres[0]["found"]) {
         res.status(400).json({ code: "EMAIL_ALREADY_USED" });
         return;
@@ -55,8 +55,8 @@ User.signup = function (req, res, next) {
 
           queryPromise(sql)
             .then(() => {
-              console.log("ok");
-              res.status(200).json({ ok: 1 });
+              console.log("login");
+              User.login(req, res);
               return;
             })
             .catch((reason) => {
@@ -94,7 +94,7 @@ User.login = function (req, res) {
         return;
       }
 
-      bcrypt.compare(userPassword, pass).then((isValid) => {
+      bcrypt.compare(userPassword, sqlres[0]["us_password"]).then((isValid) => {
         if (!isValid) {
           res.status(401).json({ code: "INVALID_PASSWORD" });
           return;
@@ -107,7 +107,9 @@ User.login = function (req, res) {
         });
       });
     })
-    .catch();
+    .catch((err) => {
+      res.status(500).json({ error: err });
+    });
 };
 
 export default User;
