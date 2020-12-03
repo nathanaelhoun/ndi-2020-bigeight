@@ -1,6 +1,11 @@
 // Chargement des modules
-const express = require("express");
+import express from "express";
+import path from "path";
+import pageRouter from "./routes/pages.router.js";
+
+const __dirname = path.resolve();
 const app = express();
+
 const server = app.listen(12000, function () {
   // Ne pas modifier le numéro du port !
   console.log("C'est parti ! En attente de connexion sur le port 12000...");
@@ -10,7 +15,4 @@ const server = app.listen(12000, function () {
 // Configuration d'express pour utiliser le répertoire "public"
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/public/index.html");
-});
- 
+app.use(pageRouter);
