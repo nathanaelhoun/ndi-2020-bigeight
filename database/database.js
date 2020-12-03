@@ -23,4 +23,20 @@ Database.connect = function (err) {
   console.log("Database connected !");
 };
 
+/**
+ * Execute a query to database and return a Promise
+ * @param sql The sql query
+ * @return {Promise<Array>} The result if success, the error otherwise
+ */
+export async function queryPromise(sql) {
+  return new Promise(function (resolve, reject) {
+    Database.connection.query(sql, function (err, res) {
+      if (err) {
+        reject(err);
+      }
+      resolve(res);
+    });
+  });
+}
+
 export default Database;

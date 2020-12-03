@@ -1,9 +1,8 @@
 CREATE TABLE `User` (
-  `us_id` int(11) PRIMARY KEY NOT NULL,
+  `us_email` varchar(128) PRIMARY KEY NOT NULL,
   `us_firstname` varchar(32) NOT NULL,
   `us_lastname` varchar(32) NOT NULL,
   `us_age` int(11) NOT NULL,
-  `us_email` varchar(64) NOT NULL,
   `us_password` varchar(64) NOT NULL
 );
 
@@ -16,7 +15,7 @@ CREATE TABLE `Spot` (
 CREATE TABLE `Activity` (
   `ac_id` int(11) PRIMARY KEY NOT NULL,
   `sp_id` int(11) NOT NULL,
-  `us_id` int(11) NOT NULL,
+  `us_email` varchar(128) NOT NULL,
   `ac_startDate` varchar(12) NOT NULL,
   `ac_endDate` varchar(12) NOT NULL,
   `ac_nbBathers` int(11),
@@ -36,7 +35,7 @@ CREATE TABLE `Product` (
   `pr_name` varchar(128) NOT NULL
 );
 
-ALTER TABLE `Activity` ADD FOREIGN KEY (`us_id`) REFERENCES `User` (`us_id`);
+ALTER TABLE `Activity` ADD FOREIGN KEY (`us_email`) REFERENCES `User` (`us_email`);
 
 ALTER TABLE `Activity` ADD FOREIGN KEY (`sp_id`) REFERENCES `Spot` (`sp_id`);
 

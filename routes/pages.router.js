@@ -11,7 +11,10 @@ servePage("/utilisateur", "user");
 servePage("/donnees", "data");
 servePage("/activite", "activity");
 servePage("/amongus", "amongus");
-servePage("*", "404"); // default
+
+pagesRouter.get("*", function (_, res) {
+  res.status(404).sendFile(__dirname + `/public/html/404.html`);
+});
 
 // Functions
 /**

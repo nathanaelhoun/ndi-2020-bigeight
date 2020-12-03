@@ -3,14 +3,18 @@ import express from "express";
 import pageRouter from "./routes/pages.router.js";
 import db from "./database/database.js";
 import cors from "cors";
+import userRouter from "./routes/user.router.js";
+import bodyParser from "body-parser";
 
 const app = express();
 
 app.use(cors());
+app.use(bodyParser.json());
 
 // Configuration d'express pour utiliser le répertoire "public"
 app.use(express.static("public"));
 
+app.use("/user", userRouter);
 app.use("/", pageRouter);
 
 app.listen(12000, function () {
