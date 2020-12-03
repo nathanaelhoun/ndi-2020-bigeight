@@ -13,14 +13,14 @@ User.signup = function (req, res) {
   for (let i in req.body) {
     req.body[i] = req.body[i].trim();
   }
-  const {
-    userFirstName,
-    userLastName,
-    userAge,
-    userEmail,
-    userPassword,
-    userPasswordConf,
-  } = req.body;
+  console.table(req.body);
+
+  let userFirstName = req.body.userFirstName.trim();
+  let userLastName = req.body.userLastName.trim();
+  let userAge = req.body.userAge.trim();
+  let userEmail = req.body.userEmail.trim();
+  let userPassword = req.body.userPassword.trim();
+  let userPasswordConf = req.body.userPasswordConf.trim();
 
   if (
     !(
@@ -32,7 +32,14 @@ User.signup = function (req, res) {
       userPasswordConf
     )
   ) {
-    res.status(400).json({ error: "Missing field" });
+    res.status(400).json({ error: "Tous les champs doivent être complétés" });
+    return;
+  }
+
+  if (userPassword !== userPasswordConf) {
+    res
+      .status(400)
+      .json({ error: "Les mots de passes doivent être identique" });
     return;
   }
 
@@ -44,7 +51,7 @@ User.signup = function (req, res) {
     .then((sqlres) => {
       //console.table(sqlres);
       if (sqlres[0]["found"]) {
-        res.status(400).json({ code: "EMAIL_ALREADY_USED" });
+        res.status(400).json({ error: "L'email est déjà utilisé" });
         return;
       } else {
         // Good
@@ -66,15 +73,15 @@ User.signup = function (req, res) {
         });
       }
     })
-    .catch(() => {
-      res.status(501).json({ error: "Can't login" });
+    .catch((err) => {
+      res.status(500).json({ error: err });
       return;
     });
 };
 
 User.login = function (req, res) {
   if (!req.body) {
-    res.status(400).json({ error: "No request body" });
+    res.status(400).json({ error: "Tous les champs doivent être" });
     return;
   }
   for (let i in req.body) {
@@ -90,13 +97,13 @@ User.login = function (req, res) {
   queryPromise(sql)
     .then((sqlres) => {
       if (!sqlres || !sqlres[0] || !sqlres[0]["us_password"]) {
-        res.status(401).json({ code: "USER_NOT_FOUND" });
+        res.status(401).json({ error: "Utilisateur inconnu" });
         return;
       }
 
       bcrypt.compare(userPassword, sqlres[0]["us_password"]).then((isValid) => {
         if (!isValid) {
-          res.status(401).json({ code: "INVALID_PASSWORD" });
+          res.status(401).json({ error: "Le mot de passe est incorrecte" });
           return;
         }
         res.status(200).json({
