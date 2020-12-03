@@ -1,8 +1,12 @@
 // Chargement des modules
 import express from "express";
 import pageRouter from "./routes/pages.router.js";
+import db from "./database/database.js";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors());
 
 // Configuration d'express pour utiliser le répertoire "public"
 app.use(express.static("public"));
@@ -14,3 +18,5 @@ app.listen(12000, function () {
   console.log("C'est parti ! En attente de connexion sur le port 12000...");
   console.log("Se connecter à l'application en local : http://localhost:12000");
 });
+
+db.connection.connect(db.connect);
