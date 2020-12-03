@@ -63,3 +63,7 @@ body > footer img {
   padding: 10px;
   border-radius: 3px;
 }
+
+body {
+  padding: 0 8%;
+}
