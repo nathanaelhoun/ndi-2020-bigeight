@@ -2,16 +2,14 @@ import express from "express";
 import path from "path";
 
 const __dirname = path.resolve();
-const pagesRouter = express.Router();
+let pagesRouter = express.Router();
 
 servePage("/", "index");
 servePage("/connexion", "login");
 servePage("/inscription", "signup");
 servePage("/utilisateur", "user");
 servePage("/donnees", "data");
-servePage("/prelevement", "sample");
-servePage("/frequentation", "attendance");
-servePage("/waterman", "waterman");
+servePage("/activite", "activity");
 servePage("/amongus", "amongus");
 servePage("*", "404"); // default
 
