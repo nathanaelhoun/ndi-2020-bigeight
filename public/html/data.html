@@ -49,7 +49,7 @@
               <a class="nav-link" href="./donnees">Statistiques</a>
             </li>
           </ul>
-          <ul class="navbar-nav my-2 my-lg-0">
+          <ul class="navbar-nav my-2 my-lg-0" id="isLogged">
             <li class="nav-item active">
               <a class="nav-link" href="./connexion">Connexion</a>
             </li>
@@ -81,7 +81,17 @@
       ></iframe>
     </div>
       
-
+    <script>
+      if (localStorage.getItem("token")) {
+        document.getElementById("isLogged").innerHTML =
+          '<li class="nav-item active"><a class="nav-link" onclick="logout()" >Déconnexion</a></li>';
+      }
+      function logout() {
+        console.log("yeah");
+        localStorage.removeItem("token");
+        document.location.reload();
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
