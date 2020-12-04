@@ -6,6 +6,7 @@ dotenv.config();
 const User = {};
 
 User.signup = function (req, res) {
+  console.debug("request signup received");
   if (!req.body) {
     res.status(400).json({ error: "No request body" });
     return;
@@ -31,7 +32,7 @@ User.signup = function (req, res) {
     res.status(400).json({ error: "Missing field" });
     return;
   }
-
+  console.debug("querying sql");
   const sql = `SELECT COUNT(*) as found
                   FROM User
                   WHERE us_email = "${userEmail}"`;
@@ -40,28 +41,32 @@ User.signup = function (req, res) {
     .then((sqlres) => {
       //console.table(sqlres);
       if (sqlres[0]["found"]) {
+        console.debug("Email already used");
         res.status(400).json({ code: "EMAIL_ALREADY_USED" });
         return;
       } else {
         // Good
 
-        let sql = `INSERT INTO user ( \`us_firstname\`, \`us_lastname\`, \`us_age\`, \`us_email\`, \`us_password\`) 
+        console.debug("registering new user");
+        let sql = `INSERT INTO User ( \`us_firstname\`, \`us_lastname\`, \`us_age\`, \`us_email\`, \`us_password\`) 
                     VALUES ( '${userFirstName}', '${userLastName}', '${userAge}', '${userEmail}', '${userPassword}')`;
 
         queryPromise(sql)
           .then(() => {
-            console.log("login");
+            console.debug("Now login the new user");
             User.login(req, res);
             return;
           })
           .catch((reason) => {
+            console.debug("Database error when subscribing", reason);
             res.status(500).json({ error: reason });
             return;
           });
       }
     })
-    .catch(() => {
-      res.status(501).json({ error: "Can't login" });
+    .catch((err) => {
+      console.debug("database error", err);
+      res.status(501).json({ error: "Can't subscribe" });
       return;
     });
 };
