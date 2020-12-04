@@ -84,8 +84,7 @@
     <script>
       if (localStorage.getItem("token")) {
         document.getElementById("isLogged").innerHTML =
-          '<li class="nav-item active"><a class="nav-link" onclick="logout()" >('+ localStorage.getItem("email")+ ') Déconnexion</a></li>';
-      }
+'<li class="nav-item active"><a class="nav-link" href="#" onclick="logout()" >('+ localStorage.getItem("email")+ ') Déconnexion</a></li>';      }
       function logout() {
         console.log("yeah");
         localStorage.removeItem("token");
