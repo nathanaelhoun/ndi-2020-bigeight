@@ -1,6 +1,7 @@
 var nbDechet = 4;
 var animauxToSave = 3;
 var choiceImposteur = false;
+var clicPlanche = 5;
 
 function playCollect(){
 	document.getElementById("screenCollect").style.display = 'block';
@@ -39,6 +40,17 @@ function collect(numb) {
 		document.getElementById("bouteilleClear").style.display = 'block';
 		document.getElementById("bouteilleAlert").style.display = 'none';
 		setTimeout(function(){ quitCollect(); }, 500);
+		document.getElementById("ventImp").style.display = 'block';
+		document.getElementById("ventOpen").style.display = 'none';
+		let soundVent = new Sound("../musiques/ventSound.mp3");
+    	soundVent.play();
+
+		document.getElementById("persoNoir").style.display = 'none';
+		document.getElementById("persoNoirDead").style.display = 'block';
+		setTimeout(function(){ let soundDead = new Sound("../musiques/killSound.mp3");
+    	soundDead.play(); },2000);
+		
+
 	}
 }
 
@@ -78,8 +90,39 @@ function saveAnimaux(numb){
 		document.getElementById("poulpe").style.display = 'block';
 		document.getElementById("poulpeAlert").style.display = 'none';
 		setTimeout(function(){ quitPoulpe(); }, 500);
+		document.getElementById("persoBleu").style.display = 'none';
+       	document.getElementById("persoBleuDead").style.display = 'block';
+       	let soundDead = new Sound("../musiques/killSound.mp3");
+    	soundDead.play();
 	}
 }
+
+
+function playPlanche(){
+	document.getElementById("screenPlanche").style.display = 'block';
+	clicPlanche = 5;
+}
+
+function quitPlanche(){
+	document.getElementById("screenPlanche").style.display = 'none';
+}
+
+function clearPlanche(){
+	clicPlanche--;
+	if(clicPlanche==0){
+		document.getElementById("plancheSale").style.display = 'none';
+		document.getElementById("planchePropre").style.display = 'block';
+		setTimeout(function(){ quitPlanche(); }, 500);
+		document.getElementById("persoRouge").style.display = 'none';
+       	document.getElementById("persoRougeDead").style.display = 'block';
+       	let soundDead = new Sound("../musiques/killSound.mp3");
+    	soundDead.play();
+	}
+}
+
+
+
+
 
 function selectImporteur(nb){
 	let musique=new Sound("../musiques/mainMusic.mp3");
@@ -95,21 +138,19 @@ function selectImporteur(nb){
 	}
 }
 
-function hideEmergency(){
-    document.getElementById("emergencyPic").style.display="none";
-}
 
 function emergencyLaunch(){
     let sound=new Sound("../musiques/emergency.mp3");
     sound.play();
-    document.getElementById("emergencyPic").style.display="block";
-    setTimeout("hideEmergency()",1000);
-    sound2.play();
+    document.getElementById("emergencyDiv").style.display="block";
+    setTimeout(function(){ document.getElementById("emergencyDiv").style.display="none";
+    						document.location.replace("./amongus"); },2000);
 }
 
 function alarmScreen() {
     //document.getElementById("messageAmongUs").style.visibility="visible"
     //document.getElementById("launchAmongUs").style.visibility="visible"
+    document.cookie = 'bleu=true; path=/'
     light()
     playAlarm()
 }
@@ -125,16 +166,18 @@ function light() {
             flash = 1;
             //document.body.style.backgroundColor = "#CF1201";
             //document.getElementById("messageAmongUs").style.color="white"
-            document.getElementById("emergencyDiv").style.display="none"
+            document.getElementById("flashAmong").style.display="none"
             setTimeout("light()", 1000);
         } else {
             flash = 0;
-            document.getElementById("emergencyDiv").style.display="block"
+            document.getElementById("flashAmong").style.display="block"
             //document.body.style.backgroundColor = "white";
             //document.getElementById("messageAmongUs").style.color="black"
             setTimeout("light()", 1000);
 
         }
+    }else{
+    	document.getElementById("flashAmong").style.display="none"
     }
 }
 
