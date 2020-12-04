@@ -286,3 +286,9 @@ body{
   top: 130px;
   left: 100px;
 }
+
+#bleu {
+  position: absolute;
+  top: 130px;
+  left: 1500px;
+}
