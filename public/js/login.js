@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Content-Type": "application/json",
     };
 
-    fetch("/user/login", {
+    fetch("./user/login", {
       method: "POST",
       mode: "cors",
       headers,
