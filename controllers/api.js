@@ -11,22 +11,41 @@ export async function status(req, res) {
 
 export async function statsActivities(req, res) {
   queryPromise(`
-  (
-    (
-      SELECT us_firstname, COUNT(ac_id) AS nbProduits, pr_name
-      FROM User NATURAL LEFT OUTER JOIN (Activity NATURAL INNER JOIN UsedProduct NATURAL INNER JOIN Product)
-      GROUP BY us_firstname, pr_name
-    ) 
-    UNION 
-    (
-      SELECT us_firstname, 0 as nbProduits, pr_name
-      FROM (User NATURAL INNER JOIN Activity NATURAL INNER JOIN UsedProduct) NATURAL RIGHT OUTER JOIN Product
-      GROUP BY us_firstname, pr_name
-    )
-  )
-`).then((sqlRes) => {
-    
-    console.table(sqlRes);
-    res.status(200).json(sqlRes);
+    SELECT us_firstname, us_lastname
+    FROM User
+  `).then((sqlResUsers) => {
+    queryPromise(`
+      SELECT  pr_name
+      FROM  Product
+    `).then((sqlResProduits) => {
+      queryPromise(`
+        SELECT us_firstname, us_lastname, pr_name, COUNT(ac_id) as nbProduit
+        FROM User NATURAL JOIN Activity NATURAL JOIN UsedProduct NATURAL JOIN Product
+        GROUP BY us_firstname, us_lastname, pr_name
+      `).then((sqlResJointure) => {
+        const data = new Map();
+
+        sqlResUsers.forEach((user) => {
+          sqlResProduits.forEach((prod) => {
+            const username = user.us_firstname + " " + user.us_lastname;
+            const productName = prod.pr_name;
+            data.set({ username, productName }, 0);
+          });
+        });
+
+        sqlResJointure.forEach((element) => {
+          const username = element.us_firstname + " " + element.us_lastname;
+          const productName = element.pr_name;
+          data.set({ username, productName }, element.nbProduit);
+        });
+
+        const result = [];
+        data.forEach((v, k) => {
+          result.push([k.username, k.productName, v]);
+        })
+
+        res.status(200).json(result);
+      });
+    });
   });
 }
