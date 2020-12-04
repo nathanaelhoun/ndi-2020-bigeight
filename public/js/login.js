@@ -24,16 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
       body,
     })
       .then((res) => {
-        console.log(res);
+        if (!res.ok) {
+          console.error(res);
+          document.getElementById("erreur").innerHTML =
+            "L'adresse mail ou le mot de passe n'est pas correct";
+          return;
+        }
+
         res.text().then((txt) => {
           localStorage.setItem("token", JSON.parse(txt).token);
-          console.debug("location replace");
-          // document.location.replace("./");
+          document.location.replace("./");
         });
       })
       .catch((err) => {
         console.error(err);
-        // Afficher l'erreur
+        document.getElementById("erreur").innerHTML =
+          "Erreur technique lors de la connexion";
       });
   });
 });

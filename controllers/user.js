@@ -10,7 +10,6 @@ User.signup = function (req, res) {
     res.status(400).json({ error: "No request body" });
     return;
   }
-  console.table(req.body);
 
   let userFirstName = req.body.userFirstName.trim();
   let userLastName = req.body.userLastName.trim();
@@ -46,21 +45,19 @@ User.signup = function (req, res) {
       } else {
         // Good
 
-        bcrypt.hash(userPassword, 10).then((hash) => {
-          let sql = `INSERT INTO user ( \`us_firstname\`, \`us_lastname\`, \`us_age\`, \`us_email\`, \`us_password\`) 
-                    VALUES ( '${userFirstName}', '${userLastName}', '${userAge}', '${userEmail}', '${hash}')`;
+        let sql = `INSERT INTO user ( \`us_firstname\`, \`us_lastname\`, \`us_age\`, \`us_email\`, \`us_password\`) 
+                    VALUES ( '${userFirstName}', '${userLastName}', '${userAge}', '${userEmail}', '${userPassword}')`;
 
-          queryPromise(sql)
-            .then(() => {
-              console.log("login");
-              User.login(req, res);
-              return;
-            })
-            .catch((reason) => {
-              res.status(500).json({ error: reason });
-              return;
-            });
-        });
+        queryPromise(sql)
+          .then(() => {
+            console.log("login");
+            User.login(req, res);
+            return;
+          })
+          .catch((reason) => {
+            res.status(500).json({ error: reason });
+            return;
+          });
       }
     })
     .catch(() => {
@@ -91,20 +88,20 @@ User.login = function (req, res) {
         return;
       }
 
-      bcrypt.compare(userPassword, sqlres[0]["us_password"]).then((isValid) => {
-        if (!isValid) {
-          res.status(401).json({ code: "INVALID_PASSWORD" });
-          return;
-        }
-        res.status(200).json({
-          token: jwt.sign(
-            { userEmail: userEmail },
-            process.env.PRIVATE_TOKEN_KEY
-          ),
-        });
+      if (userPassword != sqlres[0]["us_password"]) {
+        res.status(401).json({ code: "INVALID_PASSWORD" });
+        return;
+      }
+
+      res.status(200).json({
+        token: jwt.sign(
+          { userEmail: userEmail },
+          process.env.PRIVATE_TOKEN_KEY
+        ),
       });
     })
     .catch((err) => {
+      console.error(err);
       res.status(500).json({ error: err });
     });
 };
