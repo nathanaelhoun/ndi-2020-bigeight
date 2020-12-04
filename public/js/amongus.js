@@ -82,6 +82,8 @@ function saveAnimaux(numb){
 }
 
 function selectImporteur(nb){
+	let musique=new Sound("../musiques/mainMusic.mp3");
+	musique.play();
 	document.getElementById("finDeJeu").style.display = 'block';
 	if(nb == 2){
 		//win
@@ -91,5 +93,60 @@ function selectImporteur(nb){
 		document.getElementById("pannelDefeat").style.display = 'block';
 		document.getElementById("pannelVictory").style.display = 'none';
 	}
+}
+
+function hideEmergency(){
+    document.getElementById("emergencyPic").style.display="none";
+}
+
+function emergencyLaunch(){
+    let sound=new Sound("../musiques/emergency.mp3");
+    sound.play();
+    document.getElementById("emergencyPic").style.display="block";
+    setTimeout("hideEmergency()",1000);
+    sound2.play();
+}
+
+function alarmScreen() {
+    //document.getElementById("messageAmongUs").style.visibility="visible"
+    //document.getElementById("launchAmongUs").style.visibility="visible"
+    light()
+    playAlarm()
+}
+
+var flash = 0
+var loopFlash = 14
+var loopSound = 2
+
+function light() {
+    if (loopFlash > 0) {
+        loopFlash--;
+        if (flash === 0) {
+            flash = 1;
+            //document.body.style.backgroundColor = "#CF1201";
+            //document.getElementById("messageAmongUs").style.color="white"
+            document.getElementById("emergencyDiv").style.display="none"
+            setTimeout("light()", 1000);
+        } else {
+            flash = 0;
+            document.getElementById("emergencyDiv").style.display="block"
+            //document.body.style.backgroundColor = "white";
+            //document.getElementById("messageAmongUs").style.color="black"
+            setTimeout("light()", 1000);
+
+        }
+    }
+}
+
+function playAlarm() {
+    if (loopSound > 0) {
+        --loopSound;
+        let sound = new Sound("../musiques/among-us-alarm.mp3");
+        sound.play();
+        setTimeout("playAlarm()", 6000);
+    }
+}
+function hideEmergency(){
+    document.getElementById("emergencyPic").style.visibility="hidden";
 }
 
