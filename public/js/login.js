@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Content-Type": "application/json",
     };
 
+    console.log(body);
     fetch("./user/login", {
       method: "POST",
       mode: "cors",
@@ -23,10 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
       body,
     })
       .then((res) => {
+        console.log(res);
         res.text().then((txt) => {
           localStorage.setItem("token", JSON.parse(txt).token);
+          console.debug("location replace");
+          // document.location.replace("./");
         });
-        document.location.replace("./");
       })
       .catch((err) => {
         console.error(err);
