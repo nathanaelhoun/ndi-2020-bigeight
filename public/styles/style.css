@@ -94,7 +94,7 @@ video {
 html, body {
   height: 100%; /* A virer plus tard si problématique ailleurs*/
   overflow-x: hidden;
-  background: linear-gradient(#A6EAFF, #356675);
+  
   max-width: 100%;
 }
 
@@ -131,7 +131,7 @@ body > footer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  background-color: #60D6F0;
+  background-color: #BCD7E8;
   opacity: 80%;
 }
 
@@ -169,17 +169,36 @@ body > footer img {
 }
 
 #formulaireActivity {
-  background-color: #EDB982;
+  background-color: white;
   border-radius: 10px;
   padding: 2%;
-  color : #614122;
+  color : black;
+  font-weight: bold;
+}
+
+#formSignup {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2%;
+  color : black;
+  font-weight: bold;
+}
+
+#formPageCo {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2%;
+  color : black;
+  font-weight: bold;
 }
 
 h1 {
+  font-weight: bold !important;
   text-align: center;
-  color: #614122;
+  color: #3261A3;
 }
 
 body{
-  background-image: url("../images/marbre.jpg");
+  background-image: url("../images/sable.png");
+  background-size: cover;
 }
