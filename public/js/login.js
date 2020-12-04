@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         res.text().then((txt) => {
           localStorage.setItem("token", JSON.parse(txt).token);
         });
+        document.location.replace("/");
       })
       .catch((err) => {
         console.error(err);
