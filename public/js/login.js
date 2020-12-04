@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         res.text().then((txt) => {
           localStorage.setItem("token", JSON.parse(txt).token);
+          localStorage.setItem("email", inputEmail.value.trim());
           document.location.replace("./");
         });
       })
