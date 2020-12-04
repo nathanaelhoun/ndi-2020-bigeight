@@ -17,12 +17,24 @@
     <title>Activité</title>
   </head>
   <body>
-
-  	<header>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCD7E8;">
-        <a class="navbar-brand" href="./"><img src="./images/surfCleanLogo.png"  width="70" height="46"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #bcd7e8"
+      >
+        <a class="navbar-brand" href="./"
+          ><img src="./images/surfCleanLogo.png" width="70" height="46"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,56 +62,67 @@
         </div>
       </nav>
     </header>
-   
+
     <h1>ACTIVITE</h1>
 
     <div class="container" id="formulaireActivity">
-	  	<div class="row">
-	  		<div class="col-12">
-			    <form>
-			    	<div class="form-group">
-						<label for="inputNameSpot">Nom du spot</label>
-			    		<input class="form-control" id="inputNameSpot">
-			    	</div>
-			    	<div class="form-group">
-			    		<label for="inputAdresseSpot">Adresse</label>
-			    		<input class="form-control" id="inputAdresseSpot">
-			    	</div>
-			    	<div class="form-group">
-				    	<div class="form-row">
-	    					<div class="col">
-	      						<label for="inputStartDate">Date de début</label>
-				    			<input class="form-control" type="date" id="inputStartDate">
-	    					</div>
-	    					<div class="col">
-	      						<label for="inputEndDate">Date de fin</label>
-				    			<input class="form-control" type="date" id="inputEndDate">
-	    					</div>
-	 					</div>
-	 					<div class="form-row">
-	    					<div class="col">
-	      						<label for="inputStarHour">Heure de début</label>
-				    			<input class="form-control" type="time" id="inputStarHour">
-	    					</div>
-	    					<div class="col">
-	      						<label for="inputEndHour">Heure de fin</label>
-				    			<input class="form-control" type="time" id="inputEndHour">
-	    					</div>
-	 					</div>
-	 				</div>
-	 				<div class="form-group">
-	 					<div class="form-row">
-				  			
-	    					<div class="col">
-	      						<label for="inputNbBathers">Nombre de baigneurs</label>
-				    			<input type="number" class="form-control" min="0" id="inputNbBathers">
-	    					</div>
-	    					
-	    					<div class="col">
-	      						<label for="inputNbSailBoat">Nombre de bateaux à voiles</label>
-				    			<input type="number" class="form-control" min="0" id="inputNbSailBoat">
-	    					</div>
-	 					</div>
+      <div class="row">
+        <div class="col-12">
+          <form>
+            <div class="form-group">
+              <label for="inputNameSpot">Nom du spot</label>
+              <input class="form-control" id="inputNameSpot" />
+            </div>
+            <div class="form-group">
+              <label for="inputAdresseSpot">Adresse</label>
+              <input class="form-control" id="inputAdresseSpot" />
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <label for="inputStartDate">Date de début</label>
+                  <input class="form-control" type="date" id="inputStartDate" />
+                </div>
+                <div class="col">
+                  <label for="inputEndDate">Date de fin</label>
+                  <input class="form-control" type="date" id="inputEndDate" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <label for="inputStarHour">Heure de début</label>
+                  <input class="form-control" type="time" id="inputStarHour" />
+                </div>
+                <div class="col">
+                  <label for="inputEndHour">Heure de fin</label>
+                  <input class="form-control" type="time" id="inputEndHour" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <label for="inputNbBathers">Nombre de baigneurs</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    min="0"
+                    id="inputNbBathers"
+                  />
+                </div>
+
+                <div class="col">
+                  <label for="inputNbSailBoat"
+                    >Nombre de bateaux à voiles</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    min="0"
+                    id="inputNbSailBoat"
+                  />
+                </div>
+              </div>
 
               <div class="form-row">
                 <div class="col">
@@ -127,61 +150,6 @@
                 </div>
               </div>
             </div>
-			  		<div class="form-group">
-				  		<div class="form-row">
-				  			<div class="col"></div>
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkCremeSol" value="cremeSol">
-	  							<label class="form-check-label" for="checkCremeSol">Crème Solaire</label>
-	    					</div>
-	    					
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkParfum" value="parfum">
-	  							<label class="form-check-label" for="checkParfum">Parfum / Déodorant</label>
-	    					</div>
-	 					</div>
-	 					<div class="form-row">
-	 						<div class="col"></div>
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkChemeHyd" value="cremeHyd">
-	  							<label class="form-check-label" for="checkChemeHyd">Crème hydratante</label>
-	    					</div>
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkMaquillage" value="maquillage">
-	  							<label class="form-check-label" for="checkMaquillage">Maquillage</label>
-	    					</div>
-	 					</div>
-	 					<div class="form-row">
-	 						<div class="col"></div>
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkEssence" value="essence">
-	  							<label class="form-check-label" for="checkEssence">Essence</label>
-	    					</div>
-	    					<div class="col">
-	    						<input class="form-check-input" type="checkbox" id="checkCigarette" value="cigarette">
-	  							<label class="form-check-label" for="checkCigarette">Cigarette</label>
-	    					</div>
-	 					</div>
-	 					<div class="form-row">
-	 						<div class="col"></div>
-	    					<div class="col">
-	      						<input class="form-check-input" type="checkbox" id="checkEngrais" value="engrais">
-	  							<label class="form-check-label" for="checkEngrais">Engrais / pesticides</label>
-	    					</div>
-	    					<div class="col">
-	    						<input class="form-check-input" type="checkbox" id="checkPeinture" value="peinture">
-	  							<label class="form-check-label" for="checkPeinture">Peinture</label>
-	    					</div>
-	 					</div>
-	 				</div>
-			  		
-			  		<button type="submit" class="btn btn-primary">Envoyer</button>
-				</form>
-			</div>
-		</div>
-	</div>
-   
-
             <div class="form-group">
               <div class="form-row">
                 <div class="col"></div>
@@ -189,10 +157,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkCremeSol"
+                    value="cremeSol"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkCremeSol"
                     >Crème Solaire</label
                   >
                 </div>
@@ -201,10 +169,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkParfum"
+                    value="parfum"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkParfum"
                     >Parfum / Déodorant</label
                   >
                 </div>
@@ -215,10 +183,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkChemeHyd"
+                    value="cremeHyd"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkChemeHyd"
                     >Crème hydratante</label
                   >
                 </div>
@@ -226,10 +194,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkMaquillage"
+                    value="maquillage"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkMaquillage"
                     >Maquillage</label
                   >
                 </div>
@@ -240,10 +208,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkEssence"
+                    value="essence"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkEssence"
                     >Essence</label
                   >
                 </div>
@@ -251,10 +219,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkCigarette"
+                    value="cigarette"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkCigarette"
                     >Cigarette</label
                   >
                 </div>
@@ -265,10 +233,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkEngrais"
+                    value="engrais"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkEngrais"
                     >Engrais / pesticides</label
                   >
                 </div>
@@ -276,10 +244,10 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    id="inlineCheckbox1"
-                    value="option1"
+                    id="checkPeinture"
+                    value="peinture"
                   />
-                  <label class="form-check-label" for="inlineCheckbox1"
+                  <label class="form-check-label" for="checkPeinture"
                     >Peinture</label
                   >
                 </div>
