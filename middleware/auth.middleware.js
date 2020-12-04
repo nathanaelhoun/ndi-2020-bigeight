@@ -9,7 +9,7 @@ function auth(req, res, next) {
   try {
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.PRIVATE_TOKEN_KEY);
-    req.body.auth_user = decodedToken.pseudo;
+    req.body.auth_user = decodedToken.userEmail;
     next();
   } catch (e) {
     res.status(401).json({ code: "UNAUTHORIZED_CONNECTION" });

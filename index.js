@@ -1,11 +1,13 @@
 // Chargement des modules
 import express from "express";
-import pageRouter from "./routes/pages.router.js";
 import db from "./database/database.js";
 import cors from "cors";
-import userRouter from "./routes/user.router.js";
 import bodyParser from "body-parser";
+
+import userRouter from "./routes/user.router.js";
 import apiRouter from "./routes/api.route.js";
+import activityRouter from "./routes/activity.router.js";
+import pageRouter from "./routes/pages.router.js";
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use(bodyParser.json());
 // Configuration d'express pour utiliser le répertoire "public"
 app.use(express.static("public"));
 
+app.use("/activity", activityRouter);
 app.use("/user", userRouter);
 app.use("/api/v1", apiRouter);
 app.use("/", pageRouter);

@@ -10,9 +10,6 @@ User.signup = function (req, res) {
     res.status(400).json({ error: "No request body" });
     return;
   }
-  for (let i in req.body) {
-    req.body[i] = req.body[i].trim();
-  }
   console.table(req.body);
 
   let userFirstName = req.body.userFirstName.trim();
