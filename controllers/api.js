@@ -39,9 +39,18 @@ export async function statsActivities(req, res) {
           data.set({ username, productName }, element.nbProduit);
         });
 
-        const result = [];
+        const result = {
+          records: [],
+        }
+
         data.forEach((v, k) => {
-          result.push([k.username, k.productName, v]);
+          result.records.push(
+            {
+              Utilisateur: k.username,
+              Produit: k.productName,
+              Quantite: v,
+            }
+          );
         })
 
         res.status(200).json(result);
