@@ -410,5 +410,40 @@ body{
   right: 20px;
 }
 
+#affichePerso{
+  margin-top: 5%;
+}
+
+.choiseImposteur{
+  cursor: pointer;
+}
+
+#finDeJeu {
+  display: none;
+  margin-top: 5px;
+  position: fixed;
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+#pannelVictory{
+  display: none;
+}
+
+#pannelDefeat {
+  display: none;
+}
+
+#quitFinJeu {
+  position: fixed;
+  display: block;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /* Page des statistiques */

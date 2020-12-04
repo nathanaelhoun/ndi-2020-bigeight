@@ -1,5 +1,6 @@
 var nbDechet = 4;
 var animauxToSave = 3;
+var choiceImposteur = false;
 
 function playCollect(){
 	document.getElementById("screenCollect").style.display = 'block';
@@ -79,3 +80,16 @@ function saveAnimaux(numb){
 		setTimeout(function(){ quitPoulpe(); }, 500);
 	}
 }
+
+function selectImporteur(nb){
+	document.getElementById("finDeJeu").style.display = 'block';
+	if(nb == 2){
+		//win
+		document.getElementById("pannelVictory").style.display = 'block';
+		document.getElementById("pannelDefeat").style.display = 'none';
+	}else{
+		document.getElementById("pannelDefeat").style.display = 'block';
+		document.getElementById("pannelVictory").style.display = 'none';
+	}
+}
+
