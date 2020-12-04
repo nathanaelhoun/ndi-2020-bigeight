@@ -10,18 +10,11 @@ export async function status(req, res) {
 }
 
 export async function statsActivities(req, res) {
-
   queryPromise(`
   SELECT * 
   FROM User NATURAL JOIN Activity NATURAL JOIN UsedProduct NATURAL JOIN Product
-`).then(
-    (sqlRes) => {
-      console.table(sqlRes);
-      res.status(200).json(sqlRes)
-    }
-  )
-
-
-
-
+`).then((sqlRes) => {
+    console.table(sqlRes);
+    res.status(200).json(sqlRes);
+  });
 }
