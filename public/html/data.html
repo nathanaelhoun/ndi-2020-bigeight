@@ -63,28 +63,30 @@
     <h1>Visualisation de données</h1>
 
     <div id="stat">
-      
       <iframe
-        style="border: 0; overflow: hidden; display: block; position: absolute; max-width: 100%;"
+        style="border: 0; overflow: hidden"
         frameborder="0"
         height="100%"
-        width="100%"
-        src="https://nuit-info-2020.toucantoco.com/embed.html?id=ce270543-404d-4a45-83a0-586720376bd5&height=800px&width=620px"
+        width="58%"
+        src="https://nuit-info-2020.toucantoco.com/embed.html?id=ce270543-404d-4a45-83a0-586720376bd5&height=400px&width=620px"
       ></iframe>
 
       <iframe
         style="border: 0; overflow: hidden"
         frameborder="0"
         height="100%"
-        width="100%"
+        width="38%"
         src="https://nuit-info-2020.toucantoco.com/embed.html?id=b36cec25-0433-481f-a9a7-34c59419d211&height=auto&width=420px"
       ></iframe>
     </div>
-      
+
     <script>
       if (localStorage.getItem("token")) {
         document.getElementById("isLogged").innerHTML =
-'<li class="nav-item active"><a class="nav-link" href="#" onclick="logout()" >('+ localStorage.getItem("email")+ ') Déconnexion</a></li>';      }
+          '<li class="nav-item active"><a class="nav-link" href="#" onclick="logout()" >(' +
+          localStorage.getItem("email") +
+          ") Déconnexion</a></li>";
+      }
       function logout() {
         console.log("yeah");
         localStorage.removeItem("token");
