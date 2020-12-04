@@ -163,9 +163,15 @@ body > footer img {
   overflow: hidden;
 }
 
+#textAccueil h2 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
 #textAccueil {
   padding-top: 10%;
-
+  font-weight: bold;
+  font-size: 20px;
 }
 
 #formulaireActivity {
@@ -447,3 +453,11 @@ body{
 }
 
 /* Page des statistiques */
+
+#stat{
+  position: absolute; /* postulat de départ */
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  width: 100%;
+  max-width: 100%;
+}
