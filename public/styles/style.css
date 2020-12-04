@@ -207,6 +207,8 @@ body{
 
 /* Among us */
 
+/* Jeu collect */
+
 #playCollect {
   width: 150px;
   height: 150px;
@@ -279,6 +281,97 @@ body{
 }
 
 
+/* Jeu save ocean */
+
+#playOcean {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: block;
+  left: 70px;
+  bottom: 100px;
+  cursor: pointer;
+}
+
+#screenOcean {
+  background-color: grey;
+  padding: 10px;
+  display: none;
+  margin-top: 5px;
+  position: fixed;
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+
+}
+
+#poulpeAlert {
+  display: block;
+}
+
+#poulpe {
+  display: none;
+}
+
+#quitOcean{
+  position: fixed;
+  display: block;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#poisson{
+  display: none;
+  position: absolute;
+  top: 500px;
+  left: 400px;
+  cursor: pointer;
+}
+
+#poissonHelp{
+  display: block;
+  position: absolute;
+  top: 500px;
+  left: 400px;
+  cursor: pointer;
+}
+
+#poulpeJeu{
+  display: none;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  cursor: pointer;
+}
+
+#poulpeHelp{
+  display: block;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  cursor: pointer;
+}
+
+#tortue{
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 470px;
+  cursor: pointer;
+}
+
+#tortueHelp{
+  display: block;
+  position: absolute;
+  top: 150px;
+  left: 470px;
+  cursor: pointer;
+}
+
 /* Perso */
 
 #duckduck {
@@ -291,4 +384,28 @@ body{
   position: absolute;
   top: 130px;
   left: 1500px;
+}
+
+#vert {
+  position: absolute;
+  bottom: 130px;
+  right: 130px;
+}
+
+#noir {
+  position: absolute;
+  bottom: 330px;
+  right: 130px;
+}
+
+#vent {
+  position: absolute;
+  bottom: 70px;
+  left: 850px;
+}
+
+.emergencButton{
+  position: absolute;
+  top: 80px;
+  right: 20px;
 }
