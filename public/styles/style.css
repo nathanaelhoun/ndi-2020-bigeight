@@ -94,7 +94,7 @@ video {
 html, body {
   height: 100%; /* A virer plus tard si problématique ailleurs*/
   overflow-x: hidden;
-  
+  overflow-y: hidden; 
   max-width: 100%;
 }
 
@@ -378,6 +378,41 @@ body{
   cursor: pointer;
 }
 
+/* Jeu planche */
+
+#playPlanche {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: block;
+  left: 800px;
+  bottom: 280px;
+  cursor: pointer;
+}
+
+#screenPlanche {
+  background-color: grey;
+  padding: 10px;
+  display: none;
+  margin-top: 5px;
+  position: fixed;
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+
+}
+
+#quitPlanche{
+  position: fixed;
+  display: block;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Perso */
 
 #duckduck {
@@ -402,6 +437,18 @@ body{
   position: absolute;
   bottom: 330px;
   right: 130px;
+}
+
+#rouge {
+  position: absolute;
+  bottom: 330px;
+  right: 130px;
+}
+
+#jaune {
+  position: absolute;
+  bottom: 130px;
+  left: 130px;
 }
 
 #vent {
@@ -458,6 +505,14 @@ body{
   position: fixed;
   top: 50%; left: 50%; /* à 50%/50% du parent référent */
   transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+#flashAmong{
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  display: none;
+  opacity: 0.5;
 }
 
 /* Page des statistiques */
