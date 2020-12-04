@@ -22,7 +22,8 @@ VALUES (
         'francois@poguet.com',
         '1234'
     ),
-    ('Nath', 'Houn', 20, 'nath@houn.fr', '1234');
+    ('Nath', 'Houn', 20, 'nath@houn.fr', '1234'),
+    ('Loic', 'GrandPerrin', 22, 'loic@gmail.com', '1234');
 INSERT INTO `Spot` (`sp_name`, `sp_address`)
 VALUES ("Jardin de Fabian", "Franois"),
     ("La Seine", "Paris");
@@ -70,7 +71,7 @@ INSERT INTO `UsedProduct` (`ac_id`, `pr_id`)
 VALUES (1, 1),
     (1, 2),
     (1, 3),
-    (2, 4),
+    (2, 2),
     (2, 5),
     (2, 6),
     (3, 1),
