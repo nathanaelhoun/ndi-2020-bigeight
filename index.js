@@ -5,6 +5,7 @@ import db from "./database/database.js";
 import cors from "cors";
 import userRouter from "./routes/user.router.js";
 import bodyParser from "body-parser";
+import apiRouter from "./routes/api.route.js";
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.use("/user", userRouter);
+app.use("/api/v1", apiRouter);
 app.use("/", pageRouter);
 
 app.listen(12000, function () {
