@@ -12,7 +12,7 @@ Cette application leur permet, depuis un téléphone ou un ordinateur,
 - de consulter les produits récupérés par les autres utilisateurs de Surfclean
 - (non fonctionnel) d'enregistrer une activité via un formulaire, et de déclarer les produits détectés.
 
-\* (à Saint-Malo)
+\* (à Saint-Malo uniquement)
 
 L'application est disponible ici : [ndi-2020-bigeight.nathanaelhoun.fr](https://ndi-2020-bigeight.nathanaelhoun.fr).
 
@@ -21,10 +21,10 @@ L'application est disponible ici : [ndi-2020-bigeight.nathanaelhoun.fr](https://
 Fière de représenter la région bisontine, l"équipe Big Eight est composée d'une bande de joyeux lurons :
 
 - [Nathanaël Houn](https://nathanaelhoun.fr)
-- Cynthia Maillard
+- [Cynthia Maillard](https://www.linkedin.com/in/cynthia-maillard/)
 - [François Poguet](https://francois.poguet.com)
 - Lancelot Vega
 - Éléa Jacquin
 - Marie-Almina Gindre
 - Loïc Grandperrin
-- Jérémy Thiébaud
+- [Jérémy Thiébaud](https://www.linkedin.com/in/j%C3%A9r%C3%A9my-thi%C3%A9baud-60b9281b8/)

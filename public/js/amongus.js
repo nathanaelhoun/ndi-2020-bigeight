@@ -110,17 +110,19 @@ function quitPlanche() {
 }
 
 function clearPlanche() {
+  const soundDead = new Sound("./musiques/killSound.mp3");
   clicPlanche--;
   if (clicPlanche == 0) {
     document.getElementById("plancheSale").style.display = "none";
     document.getElementById("planchePropre").style.display = "block";
+    soundDead.play();
     setTimeout(function () {
       quitPlanche();
     }, 500);
     document.getElementById("persoRouge").style.display = "none";
     document.getElementById("persoRougeDead").style.display = "block";
-    let soundDead = new Sound("./musiques/killSound.mp3");
-    soundDead.play();
+    document.getElementById("plancheAlert").style.display = "none";
+    document.getElementById("plancheClear").style.display = "block";
   }
 }
 
