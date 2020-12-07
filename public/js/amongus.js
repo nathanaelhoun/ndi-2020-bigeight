@@ -42,12 +42,12 @@ function collect(numb) {
 		setTimeout(function(){ quitCollect(); }, 500);
 		document.getElementById("ventImp").style.display = 'block';
 		document.getElementById("ventOpen").style.display = 'none';
-		let soundVent = new Sound("../musiques/ventSound.mp3");
+		let soundVent = new Sound("./musiques/ventSound.mp3");
     	soundVent.play();
 
 		document.getElementById("persoNoir").style.display = 'none';
 		document.getElementById("persoNoirDead").style.display = 'block';
-		setTimeout(function(){ let soundDead = new Sound("../musiques/killSound.mp3");
+		setTimeout(function(){ let soundDead = new Sound("./musiques/killSound.mp3");
     	soundDead.play(); },2000);
 		
 
@@ -92,7 +92,7 @@ function saveAnimaux(numb){
 		setTimeout(function(){ quitPoulpe(); }, 500);
 		document.getElementById("persoBleu").style.display = 'none';
        	document.getElementById("persoBleuDead").style.display = 'block';
-       	let soundDead = new Sound("../musiques/killSound.mp3");
+       	let soundDead = new Sound("./musiques/killSound.mp3");
     	soundDead.play();
 	}
 }
@@ -115,7 +115,7 @@ function clearPlanche(){
 		setTimeout(function(){ quitPlanche(); }, 500);
 		document.getElementById("persoRouge").style.display = 'none';
        	document.getElementById("persoRougeDead").style.display = 'block';
-       	let soundDead = new Sound("../musiques/killSound.mp3");
+       	let soundDead = new Sound("./musiques/killSound.mp3");
     	soundDead.play();
 	}
 }
@@ -125,7 +125,7 @@ function clearPlanche(){
 
 
 function selectImporteur(nb){
-	let musique=new Sound("../musiques/mainMusic.mp3");
+	let musique=new Sound("./musiques/mainMusic.mp3");
 	musique.play();
 	document.getElementById("finDeJeu").style.display = 'block';
 	if(nb == 2){
@@ -140,7 +140,7 @@ function selectImporteur(nb){
 
 
 function emergencyLaunch(){
-    let sound=new Sound("../musiques/emergency.mp3");
+    let sound=new Sound("./musiques/emergency.mp3");
     sound.play();
     document.getElementById("emergencyDiv").style.display="block";
     setTimeout(function(){ document.getElementById("emergencyDiv").style.display="none";
@@ -184,7 +184,7 @@ function light() {
 function playAlarm() {
     if (loopSound > 0) {
         --loopSound;
-        let sound = new Sound("../musiques/among-us-alarm.mp3");
+        let sound = new Sound("./musiques/among-us-alarm.mp3");
         sound.play();
         setTimeout("playAlarm()", 6000);
     }
