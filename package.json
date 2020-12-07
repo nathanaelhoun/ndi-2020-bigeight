@@ -8,6 +8,16 @@
     "start": "node ."
   },
   "author": "",
+  "contributors": [
+    "Nathanaël Houn",
+    "Cynthia Maillard",
+    "François Poguet",
+    "Lancelot Vega",
+    "Éléa Jacquin",
+    "Marie-Almina Gindre",
+    "Loïc Grandperrin",
+    "Jérémy Thiébaud"
+  ],
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
