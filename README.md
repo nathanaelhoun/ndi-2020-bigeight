@@ -7,20 +7,22 @@
 Cette application leur permet, depuis un téléphone ou un ordinateur,
 
 - de s'inscrire et de se connecter,
-- de se divertir en jouant à un jeu similaire à Among Us, customisé selon leur thème préféré : le surf
-- de consulter des statistiques sur la qualité de l'eau de leur plage préférée (à Saint-Malo),
+- de se divertir en jouant à un jeu similaire à Among Us, customisé selon leur thème préféré et avec une musique spécialement composée
+- de consulter des statistiques sur la qualité de l'eau de leur plage préférée\* ,
 - de consulter les produits récupérés par les autres utilisateurs de Surfclean
 - (non fonctionnel) d'enregistrer une activité via un formulaire, et de déclarer les produits détectés.
 
-L'application est disponible ici : [nuit-info.ofni.asso.fr/bigeight/](https://nuit-info.ofni.asso.fr/bigeight/).
+\* (à Saint-Malo)
+
+L'application est disponible ici : [ndi-2020-bigeight.nathanaelhoun.fr](https://ndi-2020-bigeight.nathanaelhoun.fr).
 
 ## L'équipe BigEight
 
 Fière de représenter la région bisontine, l"équipe Big Eight est composée d'une bande de joyeux lurons :
 
-- Nathanaël Houn
+- [Nathanaël Houn](https://nathanaelhoun.fr)
 - Cynthia Maillard
-- François Poguet
+- [François Poguet](https://francois.poguet.com)
 - Lancelot Vega
 - Éléa Jacquin
 - Marie-Almina Gindre
