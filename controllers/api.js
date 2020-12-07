@@ -41,17 +41,15 @@ export async function statsActivities(req, res) {
 
         const result = {
           records: [],
-        }
+        };
 
         data.forEach((v, k) => {
-          result.records.push(
-            {
-              Utilisateur: k.username,
-              Produit: k.productName,
-              Quantite: v,
-            }
-          );
-        })
+          result.records.push({
+            Utilisateur: k.username,
+            Produit: k.productName,
+            Quantite: v,
+          });
+        });
 
         res.status(200).json(result);
       });

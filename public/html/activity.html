@@ -259,42 +259,98 @@
       </div>
     </div>
 
+    <div id="duckduck">
+      <img src="./images/rose.png" width="150px" height="150px" />
+    </div>
 
-	<div id="duckduck" >
-		<img src="./images/rose.png" width="150px" height="150px">
-	</div>
+    <div id="noir">
+      <img
+        id="persoNoir"
+        src="./images/noir.png"
+        width="150px"
+        height="150px"
+      />
+      <img
+        id="persoNoirDead"
+        src="./images/noir_mort_couche.png"
+        width="150px"
+        height="150px"
+        style="display: none"
+      />
+    </div>
 
-	<div id="noir" >
-		<img id="persoNoir" src="./images/noir.png" width="150px" height="150px">
-    <img id="persoNoirDead" src="./images/noir_mort_couche.png" width="150px" height="150px" style="display: none;">
-	</div>
-
-	<div id="vent" >
-        <img id="ventOpen" src="./images/vent.png" width="100px" height="100px">
-        <img id="ventImp" src="./images/vent_imposteur.png" width="100px" height="100px" style="display: none;">
+    <div id="vent">
+      <img id="ventOpen" src="./images/vent.png" width="100px" height="100px" />
+      <img
+        id="ventImp"
+        src="./images/vent_imposteur.png"
+        width="100px"
+        height="100px"
+        style="display: none"
+      />
     </div>
 
     <div class="emergencButton" onclick="emergencyLaunch()">
-        <img src="./images/bouton.png" width="150px" height="150px">
+      <img src="./images/bouton.png" width="150px" height="150px" />
     </div>
 
     <div id="emergencyDiv">
-      <img id="emergencyPic" src="./images/emergency.png" width="1921" height="500" >
+      <img
+        id="emergencyPic"
+        src="./images/emergency.png"
+        width="1921"
+        height="500"
+      />
     </div>
 
-	<div id="playCollect" >
-		<img id="bouteilleAlert" onclick="playCollect()" src="./images/bouteilleAlert.png" width="150px" height="150px">
-		<img id="bouteilleClear" src="./images/bouteille.png" width="150px" height="150px">
-	</div>
+    <div id="playCollect">
+      <img
+        id="bouteilleAlert"
+        onclick="playCollect()"
+        src="./images/bouteilleAlert.png"
+        width="150px"
+        height="150px"
+      />
+      <img
+        id="bouteilleClear"
+        src="./images/bouteille.png"
+        width="150px"
+        height="150px"
+      />
+    </div>
 
-	<div id="screenCollect">
-		<div id="quitCollect" onclick="quitCollect()">X</div>
-		<img src="./images/jeucollectFond.png" width="700px" height="700px">
-		<img id="collectBouteille" onclick="collect(1)" src="./images/bouteille.png" width="150px" height="150px">
-		<img id="collectPneu" onclick="collect(2)" src="./images/pneu.png" width="250px" height="250px">
-		<img id="collectGobelet" onclick="collect(3)" src="./images/gobelet.png" width="50px" height="50px">
-		<img id="collectCanette" onclick="collect(4)" src="./images/canette.png" width="80px" height="80px">
-	</div>
+    <div id="screenCollect">
+      <div id="quitCollect" onclick="quitCollect()">X</div>
+      <img src="./images/jeucollectFond.png" width="700px" height="700px" />
+      <img
+        id="collectBouteille"
+        onclick="collect(1)"
+        src="./images/bouteille.png"
+        width="150px"
+        height="150px"
+      />
+      <img
+        id="collectPneu"
+        onclick="collect(2)"
+        src="./images/pneu.png"
+        width="250px"
+        height="250px"
+      />
+      <img
+        id="collectGobelet"
+        onclick="collect(3)"
+        src="./images/gobelet.png"
+        width="50px"
+        height="50px"
+      />
+      <img
+        id="collectCanette"
+        onclick="collect(4)"
+        src="./images/canette.png"
+        width="80px"
+        height="80px"
+      />
+    </div>
 
     <script src="./js/amongus.js" type="text/javascript"></script>
     <script type="text/javascript" src="./js/Sound.js"></script>
@@ -306,7 +362,10 @@
     <script>
       if (localStorage.getItem("token")) {
         document.getElementById("isLogged").innerHTML =
-'<li class="nav-item active"><a class="nav-link" href="#" onclick="logout()" >('+ localStorage.getItem("email")+ ') Déconnexion</a></li>';      }
+          '<li class="nav-item active"><a class="nav-link" href="#" onclick="logout()" >(' +
+          localStorage.getItem("email") +
+          ") Déconnexion</a></li>";
+      }
       function logout() {
         console.log("disconnected");
         localStorage.removeItem("token");
@@ -320,7 +379,12 @@
     ></script>
 
     <footer>
-      <p>Réalisé pour la <a href="https://www.nuitdelinfo.com">Nuit de l'Info</a> 2020 par l'équipe BigEight (Nathanaël, Cynthia, François, Lancelot, Éléa, Marie-Almina, Loïc, et Jérémy)</p>
-    </footer>  
+      <p>
+        Réalisé pour la
+        <a href="https://www.nuitdelinfo.com">Nuit de l'Info</a> 2020 par
+        l'équipe BigEight (Nathanaël, Cynthia, François, Lancelot, Éléa,
+        Marie-Almina, Loïc, et Jérémy)
+      </p>
+    </footer>
   </body>
 </html>
