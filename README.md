@@ -18,7 +18,7 @@ L'application est disponible ici : [ndi-2020-bigeight.nathanaelhoun.fr](https://
 
 ## L'équipe BigEight
 
-Fière de représenter la région bisontine, l"équipe Big Eight est composée d'une bande de joyeux lurons :
+Fière de représenter la région bisontine, l'équipe Big Eight est composée d'une bande de joyeux lurons :
 
 - [Nathanaël Houn](https://nathanaelhoun.fr)
 - [Cynthia Maillard](https://www.linkedin.com/in/cynthia-maillard/)
