@@ -28,3 +28,23 @@ Fière de représenter la région bisontine, l'équipe Big Eight est composée d
 - Marie-Almina Gindre
 - Loïc Grandperrin
 - [Jérémy Thiébaud](https://www.linkedin.com/in/j%C3%A9r%C3%A9my-thi%C3%A9baud-60b9281b8/)
+
+## Installation
+
+- Installer `node` (v >= 14) et `mysql`
+- Créer la base de données mysql (possibilité de créer un mode de passe avec `openssl rand -base64 16`
+  ```
+  CREATE USER 'bigeight'@'localhost' IDENTIFIED BY 'PASSWORD_HERE';
+  # si mysql v >= 8.0: ALTER USER 'bigeight'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD_HERE'
+  CREATE DATABASE bigeight;
+  GRANT ALL PRIVILEGES ON bigeight.* TO 'bigeight'@'localhost';
+  ```
+- Créer le fichier de configuration `.env` à la racine du project
+  ```
+  PORT=12000
+  DB_HOST=localhost
+  DB_USER=bigeight
+  DB_PASSWORD=PASSWORD_HERE
+  DB_DATABASE=bigeight
+  ```
+- Démarrer le projet avec `node .`
