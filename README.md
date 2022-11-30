@@ -14,8 +14,6 @@ Cette application leur permet, depuis un téléphone ou un ordinateur,
 
 \* (à Saint-Malo uniquement)
 
-L'application est disponible ici : [ndi-2020-bigeight.nathanaelhoun.fr](https://ndi-2020-bigeight.nathanaelhoun.fr).
-
 ## L'équipe BigEight
 
 Fière de représenter la région bisontine, l'équipe Big Eight est composée d'une bande de joyeux lurons :
@@ -29,7 +27,7 @@ Fière de représenter la région bisontine, l'équipe Big Eight est composée d
 - Loïc Grandperrin
 - [Jérémy Thiébaud](https://www.linkedin.com/in/j%C3%A9r%C3%A9my-thi%C3%A9baud-60b9281b8/)
 
-## Installation
+## Installation de l'application
 
 - Installer `node` (v >= 14) et `mysql`
 - Créer la base de données mysql (possibilité de créer un mode de passe avec `openssl rand -base64 16`
